@@ -1,4 +1,5 @@
 @import "reset.css";
+/* @import "re" */
 
 body {
   background-color: #ededee;
@@ -10,7 +11,7 @@ body {
   padding: 50px 0px;
 }
 
-.jsCanvas {
+#jsCanvas {
   width: 600px;
   height: 600px;
   background-color: white;
