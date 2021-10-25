@@ -1,8 +1,3 @@
-
-![그림판](https://user-images.githubusercontent.com/68775082/138700438-0e3ed67c-fb11-4cdd-9925-f466a0014e0c.png)
-
-
-
 >더 다양한 메소드와 자바스크립트 동작을 익히기 위해 바닐라 자바스크립트로 프로젝트를 진행해보기로 하였다
 
 ## 🔮진행상황
@@ -300,3 +295,50 @@ function canvasClick() {
 ```
 
 `canvasClick`이라는 함수에 click이벤트리스너를 걸어주고, if문을 작성하는데 **filling이 true일때, 이 상태는 버튼이 PAINT로 변경되면서 "채우기"를 할 수 있는 상태이다.** 그리고 ``canvas2d.fillRect()`` 메서드를 사용하여 x,y좌표와 캔버스전체(width,height)크기를 설정해주면 캔버스채우기가 가능하다! 
+
+
+### 4) save버튼을 눌러 이미지 저장을 해보자! 
+
+```js
+
+const save = document.getElementsByClassName("jsSave");
+
+function saveClick() {
+  const image = canvas.toDataURL();
+  const link = document.createElement("a");
+  link.href = image;
+  link.download = "이미지🤍.png";
+
+  link.click();
+}
+
+
+if (save) {
+  save[0].addEventListener("click", saveClick);
+}
+
+```
+
+html의 버튼의 클래스명을 가져와 save 변수에 할당해주었다. 
+
+그리고 if문을 실행하여 **click**이벤트가 실행되면 **saveClick**라는 함수가 실행이 된다. 
+
+**canvas.toDataURL();** 이 메서드를 사용해보자 
+
+- 콘솔로 확인해본 결과
+
+![](https://images.velog.io/images/duswn38/post/3c598b15-0863-4625-8235-7068162efd7e/%EC%BA%A1%EC%B2%98.PNG)
+
+알수없는 코드가 마구 찍힌다. img의 데이터를 link로 가져오기 위해서 **a**테그를 생성하여 **link**변수에 할당해주었다.
+
+그리고 **link(a) href**테그에 아까 콘솔로 확인한 **toDataURL**을 할당해주었다!
+
+**link.download**는 다운로드될 때의 **파일명**이 
+
+그리고 **link.click()** 를 설정하여 이 링크가 눌리게해주었다. 실제로 클릭이벤트가 실행되는 건 상위의 **save**버튼이다! 
+
+그림판에 낙서하고 save버튼을 누르고 다운로드를 확인하면? 
+
+![](https://images.velog.io/images/duswn38/post/addedc13-efec-4c44-a969-9ee18ccd92da/66.PNG)
+
+귀엽게 이미지 다운로드 성공...!❣💕
