@@ -4,6 +4,9 @@ const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
 const mode = document.getElementsByClassName("jsMode");
 const save = document.getElementsByClassName("jsSave");
+// const back = document.getElementsById("backgroundContainer");
+
+// back.src = "1.png";/
 
 ctx.strokeStyle = "#2c2c2c";
 ctx.fillStyle = "#2c2c2c";
@@ -22,7 +25,6 @@ let painting = false;
 let filling = false;
 
 function mouseMove(event) {
-  // console.log(event.offsetX);
   const x = event.offsetX;
   const y = event.offsetY;
   if (!painting) {
@@ -107,7 +109,7 @@ if (canvas) {
   canvas.addEventListener("mouseleave", stopPainting);
   canvas.addEventListener("click", canvasClick);
 }
-console.log(Array.from(colors));
+
 Array.from(colors).forEach((color) =>
   color.addEventListener("click", changeColor)
 );
