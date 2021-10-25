@@ -1,5 +1,7 @@
-# paint-js
-[토이프로젝트] 바닐라 자바스크립트로 그림판 구현하기 
+
+![그림판](https://user-images.githubusercontent.com/68775082/138700438-0e3ed67c-fb11-4cdd-9925-f466a0014e0c.png)
+
+
 
 >더 다양한 메소드와 자바스크립트 동작을 익히기 위해 바닐라 자바스크립트로 프로젝트를 진행해보기로 하였다
 
@@ -91,7 +93,7 @@ if (canvas) {
 <br>
 
 
-마우스 좌표를 설정하기 위해 `mouseEvent.offsetX`와 `offsetY` 메서드를 설정한다
+마우스 좌표를 설정하기 위해 `event.offsetX`와 `offsetY` 메서드를 각 변수에 할당한다.
  
  
 ```js
